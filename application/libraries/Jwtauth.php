@@ -67,7 +67,7 @@ class Jwtauth
         $days = $this->daysValidToken;
         $exp = $current + ($days * 24 * 60 * 60);
 
-        $baseUrl = 'https://vetencode.com';
+        $baseUrl = $this->CI->config->base_url();
         $payload = [
             'iss' => $baseUrl,
             'aud' => $baseUrl,

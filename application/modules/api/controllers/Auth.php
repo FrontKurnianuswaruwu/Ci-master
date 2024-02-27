@@ -46,7 +46,8 @@ class Auth extends RestController
 
 			$payload['user_id'] = $user->id;
 			$jwt = $this->jwtauth->generateToken($payload);
-
+			$sess_data['id'] = $user->id;
+			$this->session->set_userdata($sess_data);
 			responseJSON([
 				'success' => true,
 				'message' => 'Login berhasil',

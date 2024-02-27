@@ -19,7 +19,7 @@ class Products extends RestController
 		$this->jwtauth->validate_token();
 
 		// user_id didapat dari hasil validasi token (Di validate itu di set data ke session)
-		$this->user_id = $this->session->userdata('user_id');
+		$this->user_id = $this->session->userdata('id');
 
 		$this->load->model('mproducts', 'product');
 	}
@@ -31,6 +31,7 @@ class Products extends RestController
 		responseJSON([
 			'success' => true,
 			'data' => [
+				'sccess' => 'Berhasil',
 				'uid' => $uid,
 			],
 		]);

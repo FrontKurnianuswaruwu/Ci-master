@@ -15,6 +15,7 @@ class Home extends CI_Controller
 	// how to call me? :http://localhost/projectname/home
 	public function index()
 	{
+		$this->data['table'] = $this->session->userdata('id');
 		$this->load->view('home/index', $this->data);
 	}
 

@@ -9,6 +9,7 @@
 
 <body>
 	Welcome
+	<?='session :', $table ?>
 
 </body>
 
